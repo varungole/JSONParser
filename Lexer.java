@@ -39,7 +39,7 @@ public class Lexer {
         return result.toString().contains(".") ? Double.parseDouble(result.toString()) : Integer.parseInt(result.toString());
     }
 
-    private Token tokenize() {
+    public Token tokenize() {
         while(currentChar != '\0') {
            if(Character.isWhitespace(currentChar)) {
             skipWhitespace();
@@ -81,7 +81,7 @@ public class Lexer {
     
         Token token;
         do {
-            token = lexer.tokenize();
+            token = lexer.tokenize();   
             System.out.println(token);
         } while (token.type != TokenType.EOF);
     }
